@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+//:end-use:
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //:end-bindings:
     }
 
     /**

@@ -10,6 +10,8 @@ namespace App\Console\Makers;
 
 
 use Prettus\Repository\Generators\Generator;
+use Prettus\Repository\Generators\RepositoryEloquentGenerator;
+use Prettus\Repository\Generators\RepositoryInterfaceGenerator;
 
 /**
  * Class AntBindingsGenerator
@@ -32,13 +34,23 @@ class AntBindingsRepositoryGenerator extends Generator
 
     public function run()
     {
-
-
+        $this->runUse();
         // Add entity repository binding to the repository service provider
         $provider = \File::get($this->getPath());
         $repositoryInterface = '\\' . $this->getRepository() . "::class";
         $repositoryEloquent = '\\' . $this->getEloquentRepository() . "::class";
         \File::put($this->getPath(), str_replace($this->bindPlaceholder, "\$this->app->bind({$repositoryInterface}, $repositoryEloquent);" . PHP_EOL . '        ' . $this->bindPlaceholder, $provider));
+    }
+
+    public function runUse()
+    {
+        $provider = \File::get($this->getPath());
+        $name = $this->getName();
+        $repositoryInterface = 'use ' . $this->getRepository() . ";";
+        $repositoryEloquent  = 'use ' . $this->getEloquentRepository() . ";";
+        $placeholder = "//:end-use:";
+        $replace = $repositoryInterface.PHP_EOL.$repositoryEloquent.$placeholder;
+        \File::put($this->getPath(),str_replace($placeholder,$replace,$provider));
     }
 
     /**
@@ -48,7 +60,7 @@ class AntBindingsRepositoryGenerator extends Generator
      */
     public function getPath()
     {
-        return base_path(). '/app/Providers/ServicesServiceProvider.php';
+        return base_path(). '/app/Providers/RepositoryServiceProvider.php';
     }
 
     /**
