@@ -1,0 +1,30 @@
+<?php
+
+$NAMESPACE$
+
+use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+use Modules\Core\Database\BaseEntity;
+
+/**
+ * Class $CLASS$.
+ *
+ * @package $NAMESPACE$
+ */
+class $CLASS$ extends BaseEntity
+{
+    use TransformableTrait;
+
+    protected $version_field = 'optimistic_lock';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = $FILLABLE$;
+
+    protected $hidden = ['optimistic_lock'];
+
+}
