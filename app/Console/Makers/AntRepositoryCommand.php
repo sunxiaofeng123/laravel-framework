@@ -65,7 +65,7 @@ class AntRepositoryCommand extends Command
             $this->generators->push($migrationGenerator);
         }
         */
-        $modelGenerator = new ModelGenerator([
+        $modelGenerator = new AntModelGenerator([
             'name'     => $this->argument('name'),
             'fillable' => $this->option('fillable'),
             'force'    => $this->option('force')

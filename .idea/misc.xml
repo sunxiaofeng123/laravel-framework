@@ -3,40 +3,6 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="PhpDockerContainerSettings">
-    <list>
-      <map>
-        <entry key="57f4c54f-90cd-45ab-9644-dc3ad4aa868d">
-          <value>
-            <DockerContainerSettings>
-              <option name="version" value="1" />
-              <option name="volumeBindings">
-                <list>
-                  <DockerVolumeBindingImpl>
-                    <option name="containerPath" value="/opt/project" />
-                  </DockerVolumeBindingImpl>
-                </list>
-              </option>
-            </DockerContainerSettings>
-          </value>
-        </entry>
-        <entry key="e183adf9-ccc8-49aa-8dfa-e9b6d297e962">
-          <value>
-            <DockerContainerSettings>
-              <option name="version" value="1" />
-              <option name="volumeBindings">
-                <list>
-                  <DockerVolumeBindingImpl>
-                    <option name="containerPath" value="/opt/project" />
-                  </DockerVolumeBindingImpl>
-                </list>
-              </option>
-            </DockerContainerSettings>
-          </value>
-        </entry>
-      </map>
-    </list>
-  </component>
   <component name="VagrantProjectSettings">
     <option name="instanceFolder" value="" />
     <option name="provider" value="" />

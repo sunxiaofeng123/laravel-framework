@@ -45,11 +45,10 @@ class AntBindingsRepositoryGenerator extends Generator
     public function runUse()
     {
         $provider = \File::get($this->getPath());
-        $name = $this->getName();
         $repositoryInterface = 'use ' . $this->getRepository() . ";";
         $repositoryEloquent  = 'use ' . $this->getEloquentRepository() . ";";
         $placeholder = "//:end-use:";
-        $replace = $repositoryInterface.PHP_EOL.$repositoryEloquent.$placeholder;
+        $replace = $repositoryInterface.PHP_EOL.$repositoryEloquent.PHP_EOL.$placeholder;
         \File::put($this->getPath(),str_replace($placeholder,$replace,$provider));
     }
 
