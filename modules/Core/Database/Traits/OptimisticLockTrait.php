@@ -8,6 +8,7 @@ namespace Modules\Core\Database\Traits;
  */
 
 use Modules\Core\Exception\OptimisticLockException;
+use Illuminate\Support\Arr;
 
 /**
  * Trait OptimisticLockTrait
@@ -46,7 +47,7 @@ trait OptimisticLockTrait
         if ($this->exists) {
             $query = $this->newModelQuery();
             //根据锁来查询设置
-            if (!array_get($options, 'ignore_version', false)) {
+            if (!Arr::get($options, 'ignore_version', false)) {
                 $query->where("id", "=", $this->__get($this->primaryKey))
                     ->where($this->version_field, '=', $this->__get($this->version_field) - 1);
             }
