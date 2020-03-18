@@ -13,7 +13,8 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "prettus/l5-repository": "^2.6",
-        "tymon/jwt-auth": "1.0.0-rc.4.1"
+        "tymon/jwt-auth": "1.0.0-rc.4.1",
+        "guzzlehttp/guzzle": "6.3.3"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -35,6 +36,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Modules\\":"modules/",
             "App\\": "app/"
         },
         "classmap": [
