@@ -8,7 +8,10 @@
 
 namespace Modules\Core\Response;
 
-
+/**
+ * Class AppResult
+ * @package Modules\Core\Response
+ */
 class AppResult
 {
     /**
@@ -32,6 +35,5 @@ class AppResult
         $this->status  = $status;
         $this->message = $message;
     }
-
 
 }

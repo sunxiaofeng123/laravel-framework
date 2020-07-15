@@ -11,6 +11,10 @@ namespace Modules\Core\Response;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
+/**
+ * Class PageResult
+ * @package Modules\Core\Response
+ */
 class PageResult
 {
     /**

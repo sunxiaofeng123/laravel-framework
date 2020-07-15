@@ -27,4 +27,14 @@ trait JwtUtilTrait
     {
         return JWTAuth::fromUser($user);
     }
+
+    /**
+     * 获取token
+     * @return mixed
+     */
+    public function getToken()
+    {
+        return JWTAuth::getToken();
+    }
+
 }

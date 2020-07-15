@@ -18,6 +18,9 @@ use Tests\TestCase;
 class ResponseTest extends TestCase
 {
 
+    /**
+     * 测试响应
+     */
     public function testResponse()
     {
         $data = [

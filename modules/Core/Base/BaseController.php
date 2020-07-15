@@ -11,6 +11,10 @@ namespace Modules\Core\Base;
 use Illuminate\Routing\Controller;
 use Modules\Core\Response\AppResult;
 
+/**
+ * Class BaseController
+ * @package Modules\Core\Base
+ */
 class BaseController extends Controller
 {
     /**
