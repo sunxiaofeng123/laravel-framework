@@ -13,8 +13,8 @@ use Throwable;
 
 class AntException extends \Exception
 {
-    public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
+    public function __construct(array $error, Throwable $previous = null)
     {
-        parent::__construct($message, $code, $previous);
+        parent::__construct(AntError::message($error), (int)AntError::code($error), $previous);
     }
 }

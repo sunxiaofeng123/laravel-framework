@@ -12,8 +12,6 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Prettus\Repository\Generators\FileAlreadyExistsException;
-use Prettus\Repository\Generators\MigrationGenerator;
-use Prettus\Repository\Generators\ModelGenerator;
 use Prettus\Repository\Generators\RepositoryEloquentGenerator;
 use Prettus\Repository\Generators\RepositoryInterfaceGenerator;
 use Symfony\Component\Console\Input\InputArgument;
@@ -54,17 +52,6 @@ class AntRepositoryCommand extends Command
     {
         $this->generators = new Collection();
 
-        /*
-        $migrationGenerator = new MigrationGenerator([
-            'name'   => 'create_' . Str::snake(Str::plural($this->argument('name'))) . '_table',
-            'fields' => $this->option('fillable'),
-            'force'  => $this->option('force'),
-        ]);
-
-        if (!$this->option('skip-migration')) {
-            $this->generators->push($migrationGenerator);
-        }
-        */
         $modelGenerator = new AntModelGenerator([
             'name'     => $this->argument('name'),
             'fillable' => $this->option('fillable'),
