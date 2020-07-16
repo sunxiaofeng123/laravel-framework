@@ -33,6 +33,20 @@ class BaseController extends Controller
      * @param $error
      */
     public function error(\Exception $error) {
-        return response()->json(new AppResult([], $error->getCode(), $error->getMessage()));
+        list($code, $message) = $this->error($error);
+        return response()->json(new AppResult([], $code, $message));
+    }
+
+    /**
+     * 过滤异常
+     * @param \Exception $error
+     * @return array
+     */
+    protected function _error(\Exception $error)
+    {
+        $code    = $error->getCode();
+        $message = $error->getMessage();
+
+        return array($code, $message);
     }
 }
