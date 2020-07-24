@@ -1,0 +1,13 @@
+<?php
+
+$NAMESPACE$
+
+/**
+ * Class $CLASS$Service.
+ *
+ * @package $NAMESPACE$
+ */
+ interface $CLASS$Service
+ {
+     //
+ }

@@ -9,6 +9,7 @@
 namespace App\Console\Makers;
 
 
+use Illuminate\Support\Str;
 use Prettus\Repository\Generators\Generator;
 use Prettus\Repository\Generators\Migrations\SchemaParser;
 
@@ -82,7 +83,7 @@ class AntModelGenerator extends Generator
         $filter=['id','created_at','updated_at'];
         $columns = implode(",", array_map(function($item){
             return "{$item->Field}";
-        }, array_filter(\DB::select("show full columns from ".$this->getName()),function($item)use($filter){
+        }, array_filter(\DB::select("show full columns from ".Str::snake($this->getName())),function($item)use($filter){
             return !in_array($item->Field,$filter);
         })));
 

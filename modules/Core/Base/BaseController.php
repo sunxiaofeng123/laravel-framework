@@ -33,7 +33,7 @@ class BaseController extends Controller
      * @param $error
      */
     public function error(\Exception $error) {
-        list($code, $message) = $this->error($error);
+        list($code, $message) = $this->_error($error);
         return response()->json(new AppResult([], $code, $message));
     }
 

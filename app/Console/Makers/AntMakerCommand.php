@@ -78,5 +78,7 @@ class AntMakerCommand extends Command
         $this->call("make:transformer", ['name' => $tableName]);
         //绑定
         $this->call("make:AntBindings", ['name' => $tableName]);
+        //创建Service
+        $this->call("make:SunService", ['name' => $tableName, 'path' => $inputPath]);
     }
 }
