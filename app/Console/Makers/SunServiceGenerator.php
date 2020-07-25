@@ -30,7 +30,7 @@ class SunServiceGenerator extends Generator
      */
     public function getPathConfigNode()
     {
-        return 'Service';
+        return 'service';
     }
 
     /**

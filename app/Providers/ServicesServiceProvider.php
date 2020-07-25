@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 //:end-use:
 
-class RepositoryServiceProvider extends ServiceProvider
+class ServicesServiceProvider extends ServiceProvider
 {
     /**
      * Register services.

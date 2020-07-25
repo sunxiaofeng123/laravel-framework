@@ -25,7 +25,7 @@ class SunServiceImplGenerator extends Generator
      */
     public function getPathConfigNode()
     {
-        return 'Service';
+        return 'service';
     }
 
     /**
@@ -60,11 +60,6 @@ class SunServiceImplGenerator extends Generator
      */
     public function getReplacements()
     {
-        return [
-            'class'          => $this->getClass(),
-            'namespace'      => $this->getNamespace(),
-            'root_namespace' => $this->getRootNamespace(),
-            'path'           => $this->getOption('defaultPath'),
-        ];
+        return array_merge(parent::getReplacements(),['path' => $this->getOption('defaultPath')]);
     }
 }

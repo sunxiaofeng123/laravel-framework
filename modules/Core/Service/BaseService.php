@@ -26,6 +26,11 @@ class BaseService
     public $validator;
 
     /**
+     * @var \Illuminate\Contracts\Foundation\Application|mixed
+     */
+    public $app;
+
+    /**
      * BaseService constructor.
      * @param BaseRepository $repository
      * @param LaravelValidator $validator
@@ -34,6 +39,7 @@ class BaseService
     {
         $this->repository = $repository;
         $this->validator  = $validator;
+        $this->app = app();
     }
 
 
