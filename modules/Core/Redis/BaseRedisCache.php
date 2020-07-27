@@ -24,8 +24,9 @@ abstract class BaseRedisCache implements IRedisCache
     public static function coverKey($key)
     {
         $appName = env('APP_NAME');
-        if (!empty($key) && !empty($appName)
-            && !Str::startsWith($key,$appName)) {
+
+        if (!empty($key) && env('APP_DEBUG')
+            && !empty($appName) && !Str::startsWith($key,$appName)) {
             $key = $appName.$key;
         }
 
