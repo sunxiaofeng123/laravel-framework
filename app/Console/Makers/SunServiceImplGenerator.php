@@ -50,7 +50,7 @@ class SunServiceImplGenerator extends Generator
      */
     public function getRootNamespace()
     {
-        return parent::getRootNamespace() . parent::getConfigGeneratorClassPath($this->getPathConfigNode());
+        return parent::getRootNamespace() . "Service";
     }
 
     /**

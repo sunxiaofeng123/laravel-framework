@@ -52,7 +52,7 @@ class SunBindingsServiceGenerator extends Generator
      */
     public function getPath()
     {
-        return base_path(). '/app/Providers/ServiceServiceProvider.php';
+        return base_path(). '/app/Providers/ServicesServiceProvider.php';
     }
 
     /**
